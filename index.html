@@ -2,916 +2,820 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#0b2b1f" />
-  <title>Grab A Cab Taxi Service | Belize</title>
-  <meta name="description" content="Grab A Cab Taxi Service (Belize) — Safe, Friendly & Reliable. Pickups, resort departures, dinner shuttles, Secret Beach tours, and big groups." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grab A Cab Taxi Service — Belize</title>
+  <meta name="description" content="Grab A Cab Taxi Service — Safe, Friendly & Reliable. Airport/port pickups, resort departures, dinner shuttle, Secret Beach tours, and big groups. Call or WhatsApp today." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Grab A Cab Taxi Service | Belize" />
-  <meta property="og:description" content="Safe, Friendly & Reliable. Call or message today: +501 6042698 / +501 6054022" />
+  <meta property="og:title" content="Grab A Cab Taxi Service — Belize" />
+  <meta property="og:description" content="Safe, Friendly & Reliable. Call or WhatsApp +501 6042698 / +501 6054022." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="TaxiService.jpg" />
+  <meta property="og:image" content="assets/flyer.jpg" />
 
   <style>
-    /* ------------------------------
-      Base / Reset
-    ------------------------------ */
     :root{
-      --bg0:#06130e;
-      --bg1:#0b2b1f;
-      --glass: rgba(16, 40, 30, .55);
-      --glass2: rgba(0,0,0,.35);
-      --stroke: rgba(0,0,0,.55);
+      --bg: #07090c;
+      --card: rgba(18, 21, 28, .72);
+      --card2: rgba(18, 21, 28, .55);
+      --stroke: rgba(255,255,255,.10);
       --text: rgba(255,255,255,.92);
       --muted: rgba(255,255,255,.72);
-      --gold: #ffd24a;
-      --lime: #4cff9a;
-      --danger: #ff4a4a;
-      --shadow: 0 30px 80px rgba(0,0,0,.55);
-      --shadowSoft: 0 16px 44px rgba(0,0,0,.35);
+      --muted2: rgba(255,255,255,.58);
+
+      /* Belize-ish modern accents */
+      --green: #007a33;
+      --gold: #f6c453;
+      --red: #d02b2b;
+
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --shadow2: 0 14px 34px rgba(0,0,0,.45);
       --radius: 22px;
-      --radius2: 28px;
+      --radius2: 16px;
       --max: 1120px;
     }
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+
+    *{box-sizing:border-box}
+    html, body{height:100%}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
-      background:
-        radial-gradient(1200px 900px at 25% 10%, rgba(76,255,154,.08), transparent 60%),
-        radial-gradient(1200px 900px at 80% 30%, rgba(255,210,74,.08), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+      color: var(--text);
+      background: radial-gradient(1000px 700px at 10% 10%, rgba(0,122,51,.22), transparent 60%),
+                  radial-gradient(900px 650px at 90% 10%, rgba(246,196,83,.18), transparent 60%),
+                  radial-gradient(900px 650px at 50% 90%, rgba(208,43,43,.16), transparent 55%),
+                  linear-gradient(180deg, #06070a, #0a0d13 40%, #07090c);
       overflow-x:hidden;
     }
-    a{ color:inherit; text-decoration:none; }
-    .container{ width:min(var(--max), calc(100% - 48px)); margin:0 auto; }
 
-    /* ------------------------------
-      Background Hero Art
-    ------------------------------ */
-    .bg-art{
-      position:fixed;
-      inset:0;
-      z-index:-3;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.78), rgba(0,0,0,.55) 35%, rgba(0,0,0,.78)),
-        url("TaxiService.jpg");
-      background-size: cover;
-      background-position: center;
-      filter: saturate(1.1) contrast(1.08);
-      transform: scale(1.03);
-    }
-    .grain{
-      position:fixed;
-      inset:-40%;
-      z-index:-2;
-      pointer-events:none;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-      background-size:240px 240px;
-      mix-blend-mode: overlay;
-      opacity:.18;
-      animation: drift 18s linear infinite;
-    }
-    @keyframes drift{
-      0%{ transform: translate3d(-2%, -2%, 0) rotate(0deg); }
-      100%{ transform: translate3d(2%, 2%, 0) rotate(1deg); }
-    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
 
-    /* ------------------------------
-      Header
-    ------------------------------ */
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
+    /* Top nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
       backdrop-filter: blur(12px);
-      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25));
+      background: rgba(6,7,10,.55);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 14px 0;
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
       gap:14px;
     }
     .brand{
       display:flex; align-items:center; gap:12px;
-      min-width: 210px;
+      min-width: 220px;
     }
-    .badge{
-      width:42px; height:42px; border-radius:14px;
+    .logo{
+      width:42px; height:42px; border-radius: 14px;
       display:grid; place-items:center;
-      background: linear-gradient(135deg, rgba(255,210,74,.95), rgba(76,255,154,.55));
-      box-shadow: 0 14px 30px rgba(0,0,0,.4);
-      border: 1px solid rgba(255,255,255,.18);
+      background:
+        radial-gradient(14px 14px at 30% 30%, rgba(255,255,255,.35), transparent 55%),
+        linear-gradient(135deg, rgba(0,122,51,.85), rgba(246,196,83,.9));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
     }
     .brand h1{
-      font-size: 14px; margin:0;
-      letter-spacing:.8px;
-      text-transform:uppercase;
-      opacity:.95;
-      line-height:1.1;
+      font-size:14px; margin:0; line-height:1.1;
+      letter-spacing:.3px;
     }
-    .brand small{
-      display:block;
-      font-size: 12px;
-      opacity:.7;
-      margin-top:2px;
-    }
-    .navlinks{
-      display:flex; align-items:center; gap:18px;
-      flex-wrap:wrap;
+    .brand p{margin:2px 0 0; font-size:12px; color:var(--muted2)}
+    .nav-links{
+      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
       justify-content:flex-end;
     }
-    .navlinks a{
-      font-size: 13px;
-      opacity:.78;
-      padding: 8px 10px;
+    .chip{
+      font-size:12px;
+      padding:8px 12px;
       border-radius: 999px;
-      transition: .2s ease;
-    }
-    .navlinks a:hover{ opacity:1; background: rgba(255,255,255,.08); }
-
-    .ctaRow{
-      display:flex; gap:10px; align-items:center;
-    }
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding: 11px 14px;
-      border-radius: 999px;
-      font-weight: 650;
-      font-size: 13px;
-      letter-spacing:.2px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.28);
-      transition: transform .15s ease, background .2s ease, border-color .2s ease;
-      cursor:pointer;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.85);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
       user-select:none;
-      white-space:nowrap;
     }
-    .btn:hover{ transform: translateY(-1px); background: rgba(0,0,0,.38); border-color: rgba(255,255,255,.22); }
-    .btnPrimary{
-      background: linear-gradient(135deg, rgba(255,210,74,.95), rgba(255,210,74,.55));
-      color: rgba(0,0,0,.88);
-      border-color: rgba(255,210,74,.55);
-      box-shadow: 0 18px 40px rgba(0,0,0,.45);
+    .chip:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.16)}
+    .chip.primary{
+      background: linear-gradient(135deg, rgba(0,122,51,.95), rgba(246,196,83,.92));
+      color: rgba(10,12,16,.95);
+      border-color: transparent;
+      font-weight: 700;
     }
-    .btnPrimary:hover{ background: linear-gradient(135deg, rgba(255,210,74,1), rgba(76,255,154,.55)); }
-    .btnGreen{
-      background: linear-gradient(135deg, rgba(76,255,154,.95), rgba(76,255,154,.55));
-      color: rgba(0,0,0,.9);
-      border-color: rgba(76,255,154,.55);
-    }
+    .chip.primary:hover{filter: brightness(1.05)}
 
-    /* ------------------------------
-      Hero
-    ------------------------------ */
+    /* HERO */
     .hero{
       position:relative;
-      padding: 48px 0 22px;
+      padding: 34px 0 26px;
     }
-    .heroGrid{
+
+    .hero-grid{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1.2fr .8fr;
       gap: 22px;
       align-items: stretch;
     }
 
-    .card{
-      border-radius: var(--radius2);
-      background: linear-gradient(180deg, rgba(20,55,40,.70), rgba(0,0,0,.35));
-      border: 1px solid rgba(255,255,255,.14);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; }
+      .brand{min-width:unset}
     }
-    .card::before{
-      content:"";
+
+    .hero-backdrop{
       position:absolute; inset:0;
-      background:
-        radial-gradient(800px 400px at 30% 0%, rgba(255,210,74,.16), transparent 60%),
-        radial-gradient(900px 500px at 85% 15%, rgba(76,255,154,.16), transparent 60%);
       pointer-events:none;
       opacity:.9;
+      background:
+        radial-gradient(900px 500px at 70% 35%, rgba(0,122,51,.16), transparent 60%),
+        radial-gradient(700px 500px at 20% 30%, rgba(246,196,83,.14), transparent 60%);
     }
-    .cardInner{
+
+    .poster{
       position:relative;
-      padding: 28px 26px 24px;
+      border-radius: var(--radius);
+      overflow:hidden;
+      min-height: 520px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.70)),
+        url("assets/flyer.jpg") center/cover no-repeat;
+    }
+    .poster::after{
+      content:"";
+      position:absolute; inset:-40px;
+      background:
+        radial-gradient(500px 220px at 15% 15%, rgba(246,196,83,.18), transparent 55%),
+        radial-gradient(600px 260px at 85% 15%, rgba(0,122,51,.16), transparent 55%),
+        radial-gradient(620px 300px at 70% 90%, rgba(208,43,43,.14), transparent 55%);
+      mix-blend-mode: screen;
+      opacity:.7;
+      pointer-events:none;
+    }
+
+    .poster-content{
+      position:absolute; inset:0;
+      padding: 28px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap: 20px;
     }
 
     .kicker{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.35);
-      border: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
-      font-weight: 650;
-      letter-spacing:.4px;
-      text-transform:uppercase;
-      font-size: 12px;
-      opacity:.92;
-    }
-
-    .title{
-      margin: 14px 0 8px;
-      font-size: clamp(34px, 4.2vw, 56px);
-      line-height: 1.03;
-      letter-spacing: .6px;
-      text-transform: uppercase;
-      font-weight: 900;
-      text-shadow: 0 8px 28px rgba(0,0,0,.45);
-    }
-    .title .stroke{
-      -webkit-text-stroke: 2px var(--stroke);
-      paint-order: stroke fill;
-    }
-    .subtitle{
-      margin: 0 0 18px;
-      font-size: clamp(16px, 1.6vw, 20px);
-      opacity: .86;
-      line-height: 1.5;
-    }
-
-    .pillRow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin: 14px 0 18px;
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
     }
     .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(0,0,0,.45);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.86);
+      backdrop-filter: blur(10px);
+    }
+    .pill.good{
+      background: rgba(0,122,51,.22);
+      border-color: rgba(0,122,51,.35);
+    }
+    .pill.gold{
+      background: rgba(246,196,83,.18);
+      border-color: rgba(246,196,83,.30);
+    }
+
+    .hero-title{
+      margin: 0;
+      font-size: clamp(34px, 4.6vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -0.9px;
+      text-transform: uppercase;
+      text-shadow: 0 10px 30px rgba(0,0,0,.6);
+    }
+    .hero-sub{
+      margin: 10px 0 0;
+      font-size: clamp(18px, 2.0vw, 22px);
+      color: rgba(255,255,255,.90);
+      text-shadow: 0 10px 24px rgba(0,0,0,.55);
+    }
+
+    .tagline{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 14px;
+    }
+    .tag{
       padding: 10px 12px;
       border-radius: 999px;
-      background: rgba(0,0,0,.32);
+      background: rgba(0,0,0,.42);
       border: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
+      font-weight: 700;
       font-size: 13px;
-      opacity:.92;
+      color: rgba(255,255,255,.92);
+      display:flex; align-items:center; gap:8px;
     }
 
-    .contactGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .contactTile{
-      display:flex; align-items:flex-start; gap:12px;
-      padding: 14px 14px;
-      border-radius: 18px;
-      background: rgba(0,0,0,.30);
+    /* DRIVE-IN CARD */
+    .panel{
+      position:relative;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       border: 1px solid rgba(255,255,255,.10);
-      transition: .2s ease;
-      min-height: 76px;
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      min-height: 520px;
     }
-    .contactTile:hover{
-      transform: translateY(-1px);
-      border-color: rgba(255,255,255,.18);
-      background: rgba(0,0,0,.38);
-    }
-    .contactTile b{ display:block; font-size: 14px; margin-bottom: 2px; }
-    .contactTile span{ display:block; opacity:.72; font-size: 12.5px; line-height: 1.25; }
 
-    .heroRight{
+    .panel::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(480px 300px at 30% 10%, rgba(0,122,51,.18), transparent 60%),
+        radial-gradient(520px 340px at 80% 40%, rgba(246,196,83,.14), transparent 60%),
+        radial-gradient(520px 340px at 40% 95%, rgba(208,43,43,.10), transparent 60%);
+      pointer-events:none;
+    }
+
+    .drive-wrap{
+      position:relative;
+      height:100%;
+      padding: 18px;
       display:flex;
       flex-direction:column;
       gap: 14px;
     }
-    .miniCard{
-      border-radius: var(--radius);
-      background: rgba(0,0,0,.32);
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadowSoft);
-      overflow:hidden;
-    }
-    .miniCard .miniInner{
-      padding: 18px 18px;
+
+    .drive-lane{
       position:relative;
-    }
-    .miniTitle{
-      margin:0 0 8px;
-      font-size: 14px;
-      letter-spacing:.4px;
-      text-transform: uppercase;
-      opacity:.9;
-      font-weight: 800;
-    }
-    .list{
-      margin:0; padding:0; list-style:none;
-      display:flex; flex-direction:column; gap:10px;
-    }
-    .li{
-      display:flex; gap:10px; align-items:flex-start;
-      line-height: 1.35;
-      opacity:.88;
-      font-size: 13.5px;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: var(--gold);
-      margin-top: 5px;
-      box-shadow: 0 0 0 6px rgba(255,210,74,.12);
-      flex: 0 0 auto;
+      border-radius: 18px;
+      border:1px dashed rgba(255,255,255,.14);
+      background: rgba(0,0,0,.26);
+      overflow:hidden;
+      padding: 14px;
     }
 
-    /* ------------------------------
-      Drive-in animation
-    ------------------------------ */
-    .driveWrap{
-      position:relative;
-      overflow:hidden;
-      border-radius: var(--radius2);
-    }
-    .taxiLane{
-      position:absolute;
-      left:-30%;
-      top: 14px;
-      width: 160%;
-      height: 68px;
-      opacity:.9;
+    .lane-stripes{
+      position:absolute; inset:-30px;
+      background: repeating-linear-gradient(
+        135deg,
+        rgba(246,196,83,.18) 0 14px,
+        rgba(0,0,0,0) 14px 34px
+      );
+      opacity:.55;
+      transform: rotate(0deg);
       pointer-events:none;
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
     }
-    .taxi{
-      width: 120px;
-      transform: translateX(-260px);
+
+    .drive-card{
+      position:relative;
+      border-radius: 18px;
+      background: rgba(10,12,16,.62);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(14px);
+      padding: 16px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+
+      /* start offscreen for “drive-in” */
+      transform: translateX(-120%);
       opacity: 0;
     }
 
-    .card.is-driving .taxi{
-      animation: taxiDrive 1.6s cubic-bezier(.25,.9,.18,1) forwards;
-      opacity: 1;
-    }
-    .card.is-driving .cardInner{
-      animation: cardPull 1.1s cubic-bezier(.16,.9,.22,1) .28s both;
-    }
-    @keyframes taxiDrive{
-      0%{ transform: translateX(-260px) rotate(-1deg); opacity:0; }
-      15%{ opacity:1; }
-      100%{ transform: translateX(calc(100vw - 240px)) rotate(0deg); opacity:0; }
-    }
-    @keyframes cardPull{
-      0%{ transform: translateX(-18px) translateY(10px); opacity:0; filter: blur(6px); }
-      100%{ transform: translateX(0) translateY(0); opacity:1; filter: blur(0); }
+    .drive-header{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
     }
 
-    /* ------------------------------
-      Sections
-    ------------------------------ */
-    section{
-      padding: 18px 0 0;
+    .drive-header h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: .2px;
     }
-    .sectionCard{
-      border-radius: var(--radius2);
-      background: rgba(0,0,0,.32);
+    .drive-header p{
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(246,196,83,.95), rgba(0,122,51,.92));
+      color: rgba(10,12,16,.95);
+      white-space: nowrap;
+      box-shadow: 0 10px 20px rgba(0,0,0,.25);
+    }
+
+    .actions{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 520px){
+      .actions{grid-template-columns: 1fr;}
+      .poster-content{padding: 20px;}
+      .poster{min-height: 560px;}
+      .panel{min-height: unset;}
+    }
+
+    .btn{
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      padding: 12px 12px;
+      border-radius: 14px;
       border: 1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadowSoft);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.90);
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.18)}
+    .btn.call{
+      background: linear-gradient(135deg, rgba(0,122,51,.92), rgba(0,122,51,.72));
+      border-color: rgba(0,122,51,.35);
+    }
+    .btn.whatsapp{
+      background: linear-gradient(135deg, rgba(246,196,83,.92), rgba(246,196,83,.62));
+      border-color: rgba(246,196,83,.35);
+      color: rgba(10,12,16,.95);
+    }
+    .btn.mail{
+      grid-column: 1 / -1;
+      background: rgba(0,0,0,.22);
+    }
+
+    .info{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .line{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .line strong{display:block; font-size: 14px}
+    .line span{display:block; font-size: 12.5px; color: var(--muted); margin-top: 2px; line-height:1.35}
+    .copy{
+      margin-left:auto;
+      font-size:12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.20);
+      color: rgba(255,255,255,.85);
+      cursor:pointer;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      user-select:none;
+    }
+    .copy:hover{transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18)}
+
+    .services{
+      margin-top: 10px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .services h3{
+      margin:0 0 10px; font-size: 14px; letter-spacing:.2px;
+      color: rgba(255,255,255,.92);
+    }
+    .bullets{
+      margin:0; padding-left: 18px;
+      color: rgba(255,255,255,.85);
+      font-size: 13px;
+      line-height:1.55;
+    }
+    .bullets li{margin: 8px 0}
+    .bullets li::marker{color: rgba(246,196,83,.92)}
+
+    .cta{
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(208,43,43,.18), rgba(0,122,51,.18));
+      border: 1px solid rgba(255,255,255,.10);
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .cta strong{font-size: 14px}
+    .cta span{display:block; font-size: 12.5px; color: var(--muted); margin-top: 2px}
+
+    /* Sections below hero */
+    .section{
+      padding: 30px 0;
+    }
+    .section-card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow2);
       overflow:hidden;
     }
-    .sectionInner{
-      padding: 22px 22px;
-    }
-    .h2{
-      margin:0 0 10px;
+    .section-inner{padding: 22px}
+    .section h2{
+      margin:0;
       font-size: 18px;
-      text-transform: uppercase;
-      letter-spacing: .6px;
-      font-weight: 900;
+      letter-spacing: .2px;
     }
     .grid3{
+      margin-top: 14px;
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin-top: 12px;
     }
-    .feature{
-      padding: 16px;
+    @media (max-width: 900px){ .grid3{grid-template-columns: 1fr;} }
+
+    .mini{
       border-radius: 18px;
-      background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.10);
-      min-height: 120px;
-      transition:.2s ease;
+      background: rgba(0,0,0,.18);
+      padding: 14px;
+      display:flex; gap:12px; align-items:flex-start;
     }
-    .feature:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); }
-    .feature b{ display:block; margin: 10px 0 6px; }
-    .feature p{ margin:0; opacity:.78; font-size: 13.5px; line-height: 1.5; }
-
-    .split{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 12px;
-      align-items: stretch;
-      margin-top: 12px;
-    }
-
-    .form{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .row2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-    }
-    input, textarea{
-      width:100%;
-      background: rgba(0,0,0,.28);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 14px;
-      padding: 12px 12px;
-      color: var(--text);
-      outline:none;
-      font-size: 14px;
-      transition:.2s ease;
-    }
-    textarea{ min-height: 98px; resize: vertical; }
-    input:focus, textarea:focus{
-      border-color: rgba(255,210,74,.55);
-      box-shadow: 0 0 0 4px rgba(255,210,74,.12);
-    }
-    .fine{
-      font-size: 12px;
-      opacity:.65;
-      line-height: 1.4;
-      margin-top: 6px;
-    }
+    .mini h3{margin:0; font-size: 14px}
+    .mini p{margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height:1.45}
 
     footer{
-      padding: 24px 0 36px;
-      opacity:.72;
-      text-align:center;
+      padding: 22px 0 34px;
+      color: rgba(255,255,255,.60);
       font-size: 12.5px;
     }
-
-    /* ------------------------------
-      Floating quick actions
-    ------------------------------ */
-    .floatBar{
-      position:fixed;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(760px, calc(100% - 22px));
-      z-index: 90;
-      padding: 10px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.45);
-      border: 1px solid rgba(255,255,255,.14);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 18px 60px rgba(0,0,0,.55);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-    .floatBar .left{
-      display:flex; align-items:center; gap:10px; padding-left:6px;
-      min-width: 220px;
-    }
-    .floatTag{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.10);
-      font-weight: 750;
-      letter-spacing:.3px;
-      text-transform: uppercase;
-      font-size: 12px;
-      opacity:.9;
-    }
-    .floatBar .right{
-      display:flex; gap:8px; align-items:center; justify-content:flex-end;
-      flex-wrap:wrap;
+    .foot{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+      border-top:1px solid rgba(255,255,255,.10);
+      padding-top: 16px;
     }
 
-    /* ------------------------------
-      Reveal animations
-    ------------------------------ */
-    .reveal{ opacity:0; transform: translateY(10px); filter: blur(6px); }
-    .reveal.in{ opacity:1; transform: translateY(0); filter: blur(0); transition: .7s cubic-bezier(.18,.9,.22,1); }
-
-    /* ------------------------------
-      Responsive
-    ------------------------------ */
-    @media (max-width: 920px){
-      .heroGrid{ grid-template-columns: 1fr; }
-      .split{ grid-template-columns: 1fr; }
-      .grid3{ grid-template-columns: 1fr; }
-      .contactGrid{ grid-template-columns: 1fr; }
-      .taxiLane{ top: 10px; }
+    /* little car svg animation helper */
+    .taxi{
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      display:grid; place-items:center;
+      flex: 0 0 auto;
     }
-    @media (max-width: 520px){
-      .container{ width: calc(100% - 28px); }
-      .nav{ padding: 12px 0; }
-      .navlinks{ display:none; }
-      .row2{ grid-template-columns: 1fr; }
-      .floatBar{ border-radius: 18px; padding: 10px 10px; }
-      .floatBar .left{ min-width: unset; }
+
+    /* subtle reveal animations */
+    .reveal{
+      opacity:0;
+      transform: translateY(16px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.on{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .drive-card{transform:none !important; opacity:1 !important}
+      .reveal{opacity:1 !important; transform:none !important}
+      *{scroll-behavior:auto !important}
     }
   </style>
 </head>
 
 <body>
-  <div class="bg-art" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
-
-  <header>
+  <!-- NAV -->
+  <header class="nav">
     <div class="container">
-      <div class="nav">
-        <div class="brand">
-          <div class="badge" aria-hidden="true">
-            <!-- Simple taxi icon -->
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Grab A Cab Taxi Service Home">
+          <div class="logo" aria-hidden="true">
+            <!-- small taxi icon -->
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M4.5 12.5h15l-1.3-4a3 3 0 0 0-2.85-2.05H8.65A3 3 0 0 0 5.8 8.5l-1.3 4Z" stroke="rgba(0,0,0,.8)" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M6 12.5V16a2 2 0 0 0 2 2h.4" stroke="rgba(0,0,0,.8)" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M18 12.5V16a2 2 0 0 1-2 2h-.4" stroke="rgba(0,0,0,.8)" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M7.2 9.2h9.6" stroke="rgba(0,0,0,.8)" stroke-width="1.8" stroke-linecap="round"/>
-              <circle cx="8.3" cy="17.9" r="1.6" fill="rgba(0,0,0,.85)"/>
-              <circle cx="15.7" cy="17.9" r="1.6" fill="rgba(0,0,0,.85)"/>
+              <path d="M3 14.5V11.8c0-.6.2-1.1.6-1.6l2.6-3.4c.4-.5 1-.8 1.7-.8h8.2c.7 0 1.3.3 1.7.8l2.6 3.4c.4.5.6 1 .6 1.6v2.7" stroke="rgba(10,12,16,.95)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6 14.5h12" stroke="rgba(10,12,16,.95)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="rgba(10,12,16,.95)"/>
+              <path d="M16.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="rgba(10,12,16,.95)"/>
             </svg>
           </div>
           <div>
             <h1>Grab A Cab Taxi Service</h1>
-            <small>Safe, Friendly &amp; Reliable • Belize</small>
+            <p>Belize • Safe, Friendly & Reliable</p>
           </div>
-        </div>
+        </a>
 
-        <nav class="navlinks" aria-label="Site">
-          <a href="#services">Services</a>
-          <a href="#whyus">Why Us</a>
-          <a href="#contact">Contact</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a class="chip" href="#services">Services</a>
+          <a class="chip" href="#why">Why Us</a>
+          <a class="chip" href="#contact">Contact</a>
+          <a class="chip primary" href="#contact">Call / WhatsApp</a>
         </nav>
-
-        <div class="ctaRow">
-          <a class="btn" href="mailto:grabacab.belize@gmail.com" title="Email Grab A Cab">Email</a>
-          <a class="btn btnPrimary" href="#contact" title="Book / Request a ride">Book a Ride</a>
-        </div>
       </div>
     </div>
   </header>
 
-  <main>
-    <div class="container hero">
-      <div class="heroGrid">
-        <!-- Main hero card (drive-in animation) -->
-        <div class="card driveWrap" id="heroCard">
-          <div class="taxiLane" aria-hidden="true">
-            <!-- Taxi SVG that drives across -->
-            <svg class="taxi" viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#ffd24a"/>
-                  <stop offset="1" stop-color="#ffe58a"/>
-                </linearGradient>
-              </defs>
-              <path d="M35 52h150c7 0 13 6 13 13v10H22V63c0-6 6-11 13-11Z" fill="url(#g1)" stroke="rgba(0,0,0,.75)" stroke-width="4" />
-              <path d="M70 52l12-22c2-4 6-6 10-6h52c4 0 8 2 10 6l12 22" fill="url(#g1)" stroke="rgba(0,0,0,.75)" stroke-width="4" stroke-linejoin="round"/>
-              <rect x="108" y="18" width="52" height="14" rx="3" fill="rgba(0,0,0,.85)"/>
-              <text x="116" y="29" font-family="system-ui,Segoe UI,Arial" font-weight="900" font-size="12" fill="#ffd24a">TAXI</text>
-              <circle cx="65" cy="75" r="12" fill="rgba(0,0,0,.9)"/>
-              <circle cx="165" cy="75" r="12" fill="rgba(0,0,0,.9)"/>
-              <circle cx="65" cy="75" r="5" fill="rgba(255,255,255,.85)"/>
-              <circle cx="165" cy="75" r="5" fill="rgba(255,255,255,.85)"/>
-              <path d="M90 40h60" stroke="rgba(0,0,0,.7)" stroke-width="4" stroke-linecap="round"/>
-            </svg>
-          </div>
-
-          <div class="cardInner">
-            <div class="kicker">
-              <span aria-hidden="true">🚖</span>
-              Ready to roll?
-            </div>
-
-            <h2 class="title">
-              <span class="stroke">Grab A Cab</span><br/>
-              <span class="stroke">Taxi Service</span>
-            </h2>
-
-            <p class="subtitle">
-              <b style="color:var(--gold);">Safe, Friendly &amp; Reliable</b> rides across Belize.
-              Airport &amp; port pickups, resort departures, tours, dinner shuttle, and big groups.
-            </p>
-
-            <div class="pillRow">
-              <div class="pill">
-                <span aria-hidden="true">✅</span>
-                Licensed-style professional service
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="hero-backdrop"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left: Flyer hero -->
+        <section class="poster" aria-label="Hero poster">
+          <div class="poster-content">
+            <div>
+              <div class="kicker">
+                <span class="pill gold">READY TO ROLL?</span>
+                <span class="pill good">GRAB A CAB TAXI SERVICE</span>
+                <span class="pill">Belize</span>
               </div>
-              <div class="pill">
-                <span aria-hidden="true">🕒</span>
-                On-time pickups &amp; easy communication
-              </div>
-              <div class="pill">
-                <span aria-hidden="true">👥</span>
-                Big groups welcome
-              </div>
-            </div>
 
-            <div class="contactGrid">
-              <a class="contactTile" href="tel:+5016042698">
-                <span aria-hidden="true">
-                  <!-- phone -->
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M6.5 3.5h2.2c.7 0 1.3.5 1.4 1.1l.6 3c.1.6-.2 1.2-.7 1.5l-1.5.9c.9 1.7 2.3 3.1 4 4l.9-1.5c.3-.5.9-.8 1.5-.7l3 .6c.6.1 1.1.7 1.1 1.4v2.2c0 .8-.6 1.5-1.4 1.6-7.8.9-14-5.3-13.1-13.1.1-.8.8-1.4 1.6-1.4Z" stroke="rgba(255,210,74,.95)" stroke-width="2" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div>
-                  <b>Call: +501 6042698</b>
-                  <span>Tap to call instantly</span>
+              <h2 class="hero-title">Ready to Roll?</h2>
+              <p class="hero-sub"><strong>Grab A Cab Taxi Service</strong> — Safe, Friendly & Reliable</p>
+
+              <div class="tagline">
+                <div class="tag">
+                  <span aria-hidden="true">✅</span> Safe
                 </div>
-              </a>
-
-              <a class="contactTile" href="tel:+5016054022">
-                <span aria-hidden="true">
-                  <!-- phone -->
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M6.5 3.5h2.2c.7 0 1.3.5 1.4 1.1l.6 3c.1.6-.2 1.2-.7 1.5l-1.5.9c.9 1.7 2.3 3.1 4 4l.9-1.5c.3-.5.9-.8 1.5-.7l3 .6c.6.1 1.1.7 1.1 1.4v2.2c0 .8-.6 1.5-1.4 1.6-7.8.9-14-5.3-13.1-13.1.1-.8.8-1.4 1.6-1.4Z" stroke="rgba(76,255,154,.95)" stroke-width="2" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div>
-                  <b>Call: +501 6054022</b>
-                  <span>Second line for fast response</span>
+                <div class="tag">
+                  <span aria-hidden="true">😊</span> Friendly
                 </div>
-              </a>
-
-              <a class="contactTile" href="https://wa.me/5016054022" target="_blank" rel="noopener">
-                <span aria-hidden="true">
-                  <!-- whatsapp-ish bubble -->
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 21a9 9 0 1 0-7.7-4.3L3.5 21l4.5-1.2A9 9 0 0 0 12 21Z" stroke="rgba(76,255,154,.95)" stroke-width="2" stroke-linejoin="round"/>
-                    <path d="M10 8.8c.4-1 1-1 1.4-.9.3.1.6.7.8 1 .2.3.2.6 0 .8l-.6.7c.5 1 1.4 1.9 2.4 2.4l.7-.6c.3-.2.6-.2.9 0l1 .8c.3.2.6.5.5.8-.1.5-.1 1.1-1.1 1.5-1 .4-3.1-.5-4.6-2s-2.4-3.6-2-4.5Z" fill="rgba(76,255,154,.9)"/>
-                  </svg>
-                </span>
-                <div>
-                  <b>WhatsApp: +501 6054022</b>
-                  <span>Tap to message on WhatsApp</span>
-                </div>
-              </a>
-
-              <a class="contactTile" href="mailto:grabacab.belize@gmail.com">
-                <span aria-hidden="true">
-                  <!-- mail -->
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M4 7.5h16v9.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7.5Z" stroke="rgba(255,210,74,.95)" stroke-width="2" stroke-linejoin="round"/>
-                    <path d="M5 8.5l7 5 7-5" stroke="rgba(255,210,74,.95)" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                </span>
-                <div>
-                  <b>grabacab.belize@gmail.com</b>
-                  <span>Email for bookings &amp; questions</span>
-                </div>
-              </a>
-            </div>
-
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px;">
-              <a class="btn btnPrimary" href="tel:+5016042698">Call Now</a>
-              <a class="btn btnGreen" href="https://wa.me/5016054022" target="_blank" rel="noopener">Message on WhatsApp</a>
-              <a class="btn" href="#services">See Services</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right column -->
-        <div class="heroRight">
-          <div class="miniCard reveal">
-            <div class="miniInner">
-              <h3 class="miniTitle">What we do</h3>
-              <ul class="list">
-                <li class="li"><span class="dot"></span>Specialize in pick ups and resort departures at all ports of entry</li>
-                <li class="li"><span class="dot"></span>Dinner shuttle and Secret Beach tours</li>
-                <li class="li"><span class="dot"></span>We also cater for big groups</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="miniCard reveal">
-            <div class="miniInner">
-              <h3 class="miniTitle">Fast booking</h3>
-              <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                <a class="btn btnPrimary" href="tel:+5016054022">Call +501 6054022</a>
-                <a class="btn btnGreen" href="https://wa.me/5016042698" target="_blank" rel="noopener">WhatsApp +501 6042698</a>
-              </div>
-              <p class="fine">Tip: for quickest pickup, include your name, location, time, and number of passengers.</p>
-            </div>
-          </div>
-
-          <div class="miniCard reveal" id="services">
-            <div class="miniInner">
-              <h3 class="miniTitle">Popular requests</h3>
-              <div class="grid3" style="grid-template-columns:1fr; margin-top:10px;">
-                <div class="feature">
-                  <b>Airport / Port Pickup</b>
-                  <p>Meet-and-go style pickup from entry points with clear coordination.</p>
-                </div>
-                <div class="feature">
-                  <b>Resort Departures</b>
-                  <p>Reliable scheduling for checkout days, transfers, and early-morning rides.</p>
-                </div>
-                <div class="feature">
-                  <b>Dinner &amp; Tours</b>
-                  <p>Dinner shuttle + Secret Beach tours (ask for timing and group options).</p>
+                <div class="tag">
+                  <span aria-hidden="true">🕒</span> Reliable
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Why Us -->
-      <section id="whyus" class="reveal">
-        <div class="sectionCard">
-          <div class="sectionInner">
-            <h3 class="h2">Safe • Friendly • Reliable</h3>
-            <div class="grid3">
-              <div class="feature">
-                <span aria-hidden="true">🛡️</span>
-                <b>Confidence on every ride</b>
-                <p>Clear communication, smooth pickup coordination, and service-first attitude.</p>
-              </div>
-              <div class="feature">
-                <span aria-hidden="true">📍</span>
-                <b>All ports of entry</b>
-                <p>Pickups and resort departures across entry points—just share details and time.</p>
-              </div>
-              <div class="feature">
-                <span aria-hidden="true">👨‍👩‍👧‍👦</span>
-                <b>Big groups welcome</b>
-                <p>Traveling with family or friends? We’ll help plan comfortable group transport.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact / Booking -->
-      <section id="contact" class="reveal">
-        <div class="sectionCard">
-          <div class="sectionInner">
-            <h3 class="h2">Call or message us today!</h3>
-
-            <div class="split">
+            <div class="cta">
               <div>
-                <p style="margin:0 0 12px; opacity:.82; line-height:1.55;">
-                  Use the quick form below to generate a ready-to-send booking message.
-                  It will open WhatsApp (or your default messaging app) with your details pre-filled.
-                </p>
-
-                <form class="form" id="bookingForm">
-                  <div class="row2">
-                    <input name="name" placeholder="Your name" autocomplete="name" />
-                    <input name="passengers" placeholder="Passengers (e.g., 2)" inputmode="numeric" />
-                  </div>
-                  <div class="row2">
-                    <input name="pickup" placeholder="Pickup location" />
-                    <input name="time" placeholder="Pickup time / date" />
-                  </div>
-                  <textarea name="notes" placeholder="Notes (flight number, resort name, luggage, etc.)"></textarea>
-
-                  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:2px;">
-                    <button class="btn btnGreen" type="submit">Send via WhatsApp</button>
-                    <a class="btn" href="mailto:2005dani@gmail.com?subject=Taxi%20Booking%20Request">Send via Email</a>
-                    <a class="btn btnPrimary" href="tel:+5016042698">Call Now</a>
-                  </div>
-
-                  <div class="fine">
-                    WhatsApp defaults to <b>+501 6054022</b>. You can also call <b>+501 6042698</b>.
-                  </div>
-                </form>
+                <strong>CALL OR MESSAGE US TODAY!</strong>
+                <span>Fast pickups • Tours • Shuttles • Groups</span>
               </div>
+              <a class="chip primary" href="#contact">Get a Ride</a>
+            </div>
+          </div>
+        </section>
 
-              <div class="miniCard" style="height:100%;">
-                <div class="miniInner">
-                  <h3 class="miniTitle">Direct contact</h3>
-                  <div style="display:grid; gap:10px;">
-                    <a class="contactTile" href="tel:+5016042698">
-                      <span aria-hidden="true">📞</span>
-                      <div><b>+501 6042698</b><span>Tap to call</span></div>
-                    </a>
-                    <a class="contactTile" href="tel:+5016054022">
-                      <span aria-hidden="true">📞</span>
-                      <div><b>+501 6054022</b><span>Tap to call</span></div>
-                    </a>
-                    <a class="contactTile" href="https://wa.me/5016054022" target="_blank" rel="noopener">
-                      <span aria-hidden="true">💬</span>
-                      <div><b>WhatsApp +501 6054022</b><span>Tap to message</span></div>
-                    </a>
-                    <a class="contactTile" href="mailto:grabacab.belize@gmail.com">
-                      <span aria-hidden="true">✉️</span>
-                      <div><b>grabacab.belize@gmail.com</b><span>Email us</span></div>
-                    </a>
+        <!-- Right: Drive-in card panel -->
+        <aside class="panel" id="contact" aria-label="Contact panel">
+          <div class="drive-wrap">
+            <div class="drive-lane">
+              <div class="lane-stripes" aria-hidden="true"></div>
+
+              <div class="drive-card" id="driveCard">
+                <div class="drive-header">
+                  <div style="display:flex; gap:12px; align-items:flex-start;">
+                    <div class="taxi" aria-hidden="true">
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 14.5V11.8c0-.6.2-1.1.6-1.6l2.6-3.4c.4-.5 1-.8 1.7-.8h8.2c.7 0 1.3.3 1.7.8l2.6 3.4c.4.5.6 1 .6 1.6v2.7" stroke="rgba(255,255,255,.92)" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M6 14.5h12" stroke="rgba(255,255,255,.92)" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M7.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="rgba(246,196,83,.95)"/>
+                        <path d="M16.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="rgba(246,196,83,.95)"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h2>Contact & Book Now</h2>
+                      <p>Direct from the flyer — tap to call / WhatsApp, or copy numbers instantly.</p>
+                    </div>
                   </div>
+                  <div class="badge">24/7 Friendly Service</div>
+                </div>
+
+                <div class="actions">
+                  <a class="btn call" href="tel:+5016042698" aria-label="Call +501 6042698">
+                    <!-- phone icon -->
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M6.5 3.5h2.2c.7 0 1.3.5 1.4 1.2l.5 2.6c.1.6-.2 1.2-.7 1.5l-1.4.9c1.1 2.2 2.9 4 5.1 5.1l.9-1.4c.3-.5.9-.8 1.5-.7l2.6.5c.7.1 1.2.7 1.2 1.4v2.2c0 .8-.6 1.5-1.4 1.5C11 21.3 2.7 13 5 4.9c.1-.8.8-1.4 1.5-1.4Z" stroke="rgba(255,255,255,.92)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Call 6042698
+                  </a>
+
+                  <a class="btn whatsapp" href="https://wa.me/5016054022" target="_blank" rel="noopener" aria-label="WhatsApp +501 6054022">
+                    <!-- whatsapp-like bubble -->
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M20 11.5c0 4.4-3.6 8-8 8-1.3 0-2.6-.3-3.7-.9L4 20l1.4-4.1c-.6-1.1-.9-2.3-.9-3.6 0-4.4 3.6-8 8-8s8 3.6 8 8Z" stroke="rgba(10,12,16,.95)" stroke-width="2" stroke-linejoin="round"/>
+                      <path d="M9.3 9.1c.3-.3.7-.3 1 0l.7.7c.3.3.3.8 0 1.1l-.2.2c.7 1.2 1.7 2.2 2.9 2.9l.2-.2c.3-.3.8-.3 1.1 0l.7.7c.3.3.3.7 0 1-1 1-3.9.1-6.3-2.3S8.3 10.1 9.3 9.1Z" fill="rgba(10,12,16,.95)"/>
+                    </svg>
+                    WhatsApp 6054022
+                  </a>
+
+                  <a class="btn mail" href="mailto:grabacab.belize@gmail.com" aria-label="Email grabacab.belize@gmail.com">
+                    <!-- mail icon -->
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M4 6h16v12H4V6Z" stroke="rgba(255,255,255,.92)" stroke-width="2" />
+                      <path d="m4 7 8 6 8-6" stroke="rgba(255,255,255,.92)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    grabacab.belize@gmail.com
+                  </a>
+                </div>
+
+                <div class="info">
+                  <div class="line">
+                    <div aria-hidden="true">📞</div>
+                    <div>
+                      <strong>+501 6042698</strong>
+                      <span>Tap to call: works on mobile and most desktops with calling apps.</span>
+                    </div>
+                    <button class="copy" data-copy="+501 6042698" type="button">Copy</button>
+                  </div>
+
+                  <div class="line">
+                    <div aria-hidden="true">💬</div>
+                    <div>
+                      <strong>+501 6054022</strong>
+                      <span>Tap WhatsApp above — or copy to message later.</span>
+                    </div>
+                    <button class="copy" data-copy="+501 6054022" type="button">Copy</button>
+                  </div>
+                </div>
+
+                <div class="services" id="services">
+                  <h3>Services (from the flyer)</h3>
+                  <ul class="bullets">
+                    <li>Specialize in pick ups and resort departures at all ports of entry</li>
+                    <li>Dinner shuttle and Secret Beach tours</li>
+                    <li>We also cater for big groups</li>
+                  </ul>
+                </div>
+
+                <div class="cta">
+                  <div>
+                    <strong>Safe, Friendly & Reliable</strong>
+                    <span>Book now — we’ll get you rolling.</span>
+                  </div>
+                  <a class="chip primary" href="tel:+5016042698">Call Now</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-card reveal" style="margin-top:auto;">
+              <div class="section-inner">
+                <h2>Quick Booking</h2>
+                <p style="margin:10px 0 0; color: rgba(255,255,255,.72); font-size: 13px; line-height:1.5;">
+                  Tell us: <strong>pickup location</strong>, <strong>time</strong>, and <strong>number of passengers</strong>.
+                  For tours, mention <strong>Secret Beach</strong> or your preferred stops.
+                </p>
+                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+                  <a class="chip" href="https://wa.me/5016054022" target="_blank" rel="noopener">Message on WhatsApp</a>
+                  <a class="chip" href="mailto:grabacab.belize@gmail.com">Email</a>
+                  <a class="chip" href="tel:+5016042698">Call</a>
                 </div>
               </div>
             </div>
 
           </div>
-        </div>
-      </section>
-
-      <footer>
-        © <span id="y"></span> Grab A Cab Taxi Service • Belize • Safe, Friendly &amp; Reliable
-      </footer>
-    </div>
-
-    <!-- Floating quick actions -->
-    <div class="floatBar" role="region" aria-label="Quick actions">
-      <div class="left">
-        <span class="floatTag">🚖 Grab A Cab</span>
-        <span style="opacity:.75; font-size:12.5px;">Call or message today</span>
-      </div>
-      <div class="right">
-        <a class="btn btnPrimary" href="tel:+5016042698">Call</a>
-        <a class="btn btnGreen" href="https://wa.me/5016054022" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn" href="mailto:grabacab.belize@gmail.com">Email</a>
+        </aside>
       </div>
     </div>
   </main>
 
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Grab A Cab Taxi Service",
-    "areaServed": "Belize",
-    "email": "grabacab.belize@gmail.com",
-    "telephone": ["+5016042698", "+5016054022"],
-    "description": "Safe, Friendly & Reliable. Pickups and resort departures at all ports of entry, dinner shuttle, Secret Beach tours, and big groups."
-  }
-  </script>
+  <!-- WHY -->
+  <section id="why" class="section">
+    <div class="container">
+      <div class="section-card reveal">
+        <div class="section-inner">
+          <h2>Why ride with Grab A Cab</h2>
+          <div class="grid3">
+            <div class="mini">
+              <div aria-hidden="true">🛬</div>
+              <div>
+                <h3>Ports of Entry Pickups</h3>
+                <p>Airport / port pickups and resort departures handled smoothly — just share your arrival details.</p>
+              </div>
+            </div>
+            <div class="mini">
+              <div aria-hidden="true">🏝️</div>
+              <div>
+                <h3>Secret Beach & Tours</h3>
+                <p>Plan an easy day out with stops, photos, and flexible timing (great for families and friends).</p>
+              </div>
+            </div>
+            <div class="mini">
+              <div aria-hidden="true">👥</div>
+              <div>
+                <h3>Big Groups Welcome</h3>
+                <p>We cater for groups — coordinate multiple pickups and keep everyone together and on time.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta" style="margin-top:16px;">
+            <div>
+              <strong>READY TO ROLL?</strong>
+              <span>Call or message us today.</span>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="chip primary" href="tel:+5016042698">Call 6042698</a>
+              <a class="chip" href="https://wa.me/5016054022" target="_blank" rel="noopener">WhatsApp 6054022</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          © <span id="year"></span> Grab A Cab Taxi Service • Belize
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;">
+          <a class="chip" href="mailto:grabacab.belize@gmail.com">grabacab.belize@gmail.com</a>
+          <a class="chip" href="tel:+5016042698">+501 6042698</a>
+          <a class="chip" href="tel:+5016054022">+501 6054022</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    // Drive-in animation on load
-    window.addEventListener("load", () => {
-      const card = document.getElementById("heroCard");
-      card.classList.add("is-driving");
-      setTimeout(() => card.classList.remove("is-driving"), 2200);
+    // ====== Helpers
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
+
+    // ====== Year
+    $("#year").textContent = new Date().getFullYear();
+
+    // ====== Smooth anchor scroll (simple + modern)
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const id = a.getAttribute("href");
+      if (!id || id === "#") return;
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) e.target.classList.add("in");
-      }
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Booking form -> opens WhatsApp with prefilled message
-    document.getElementById("bookingForm").addEventListener("submit", (ev) => {
-      ev.preventDefault();
-      const fd = new FormData(ev.currentTarget);
-      const name = (fd.get("name") || "").toString().trim();
-      const passengers = (fd.get("passengers") || "").toString().trim();
-      const pickup = (fd.get("pickup") || "").toString().trim();
-      const time = (fd.get("time") || "").toString().trim();
-      const notes = (fd.get("notes") || "").toString().trim();
-
-      const lines = [
-        "Hello Grab A Cab Taxi Service, I'd like to book a ride:",
-        name ? `• Name: ${name}` : null,
-        pickup ? `• Pickup: ${pickup}` : null,
-        time ? `• Time/Date: ${time}` : null,
-        passengers ? `• Passengers: ${passengers}` : null,
-        notes ? `• Notes: ${notes}` : null,
-        "",
-        "Thank you!"
-      ].filter(Boolean);
-
-      const msg = encodeURIComponent(lines.join("\n"));
-      // Default WhatsApp line (as requested)
-      const phone = "5016054022";
-      const url = `https://wa.me/${phone}?text=${msg}`;
-      window.open(url, "_blank", "noopener");
-    });
-
-    // Smooth anchor scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener("click", (e) => {
-        const id = a.getAttribute("href");
-        if (!id || id === "#") return;
-        const el = document.querySelector(id);
-        if (!el) return;
-        e.preventDefault();
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+    // ====== Copy buttons
+    $$(".copy").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const text = btn.getAttribute("data-copy") || "";
+        try{
+          await navigator.clipboard.writeText(text);
+          const old = btn.textContent;
+          btn.textContent = "Copied!";
+          btn.style.background = "rgba(0,122,51,.22)";
+          btn.style.borderColor = "rgba(0,122,51,.35)";
+          setTimeout(() => {
+            btn.textContent = old;
+            btn.style.background = "";
+            btn.style.borderColor = "";
+          }, 1100);
+        }catch(err){
+          // fallback
+          prompt("Copy this:", text);
+        }
       });
     });
+
+    // ====== Drive-in animation on load (your request)
+    // Card "drives" in from left with a little bounce.
+    window.addEventListener("DOMContentLoaded", () => {
+      const card = $("#driveCard");
+      if (!card) return;
+
+      // Staged animation using requestAnimationFrame for smoothness
+      let start = null;
+      const duration = 950;
+
+      function easeOutBack(t){
+        // classic easeOutBack
+        const c1 = 1.70158;
+        const c3 = c1 + 1;
+        return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+      }
+
+      function animate(ts){
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / duration, 1);
+        const eased = easeOutBack(p);
+
+        // from -120% to 0%
+        const x = (-120 + 120 * eased);
+        card.style.transform = `translateX(${x}%)`;
+        card.style.opacity = String(Math.min(1, p * 1.2));
+
+        if (p < 1) requestAnimationFrame(animate);
+        else {
+          card.style.transform = "translateX(0)";
+          card.style.opacity = "1";
+        }
+      }
+
+      requestAnimationFrame(animate);
+    });
+
+    // ====== Reveal-on-scroll for the lower sections
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) en.target.classList.add("on");
+      });
+    }, { threshold: 0.12 });
+
+    $$(".reveal").forEach(el => io.observe(el));
   </script>
 </body>
 </html>
