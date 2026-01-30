@@ -135,7 +135,7 @@
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      gap: 20px;
+      gap: 18px;
     }
 
     .kicker{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
@@ -176,6 +176,85 @@
       font-size: 13px;
       color: rgba(255,255,255,.92);
       display:flex; align-items:center; gap:8px;
+    }
+
+    /* ✅ NEW: Quote Card (fills the blank space) */
+    .quote-card{
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(0,0,0,.45);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 35px rgba(0,0,0,.35);
+      max-width: 520px;
+    }
+    .quote-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 10px;
+    }
+    .quote-head h3{margin:0; font-size: 16px; letter-spacing: .2px;}
+    .quote-badge{
+      font-size: 12px;
+      font-weight: 900;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(246,196,83,.95), rgba(0,122,51,.92));
+      color: rgba(10,12,16,.95);
+      white-space:nowrap;
+    }
+    .quote-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 520px){
+      .quote-grid{grid-template-columns: 1fr;}
+      .quote-card{max-width: unset;}
+    }
+    .q{display:grid; gap:6px;}
+    .q span{font-size: 12px; font-weight: 800; color: rgba(255,255,255,.78);}
+    .q-input{
+      width:100%;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.28);
+      color: rgba(255,255,255,.92);
+      outline: none;
+    }
+    .q-input::placeholder{color: rgba(255,255,255,.55);}
+    .quote-actions{
+      display:flex;
+      gap:10px;
+      margin-top: 12px;
+      flex-wrap:wrap;
+    }
+    .q-btn{
+      appearance:none;
+      border: 1px solid rgba(0,122,51,.35);
+      background: linear-gradient(135deg, rgba(0,122,51,.92), rgba(0,122,51,.72));
+      color: rgba(255,255,255,.95);
+      font-weight: 900;
+      border-radius: 14px;
+      padding: 12px 14px;
+      cursor:pointer;
+      transition: transform .18s ease, filter .18s ease, background .18s ease;
+    }
+    .q-btn:hover{transform: translateY(-1px); filter: brightness(1.05);}
+    .q-btn.ghost{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.12);
+      color: rgba(255,255,255,.90);
+    }
+    .quote-small{
+      margin: 10px 0 0;
+      font-size: 12px;
+      color: rgba(255,255,255,.60);
+      line-height:1.45;
     }
 
     /* Right panel */
@@ -298,6 +377,7 @@
       overflow:hidden;
     }
     .section-inner{padding: 22px}
+
     footer{padding: 22px 0 34px; color: rgba(255,255,255,.60); font-size: 12.5px;}
     .foot{
       display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
@@ -308,8 +388,10 @@
     .reveal{opacity:0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease;}
     .reveal.on{opacity:1; transform: translateY(0);}
 
-    /* Input styling */
+    /* inputs used in Netlify form */
     .field{
+      width: 100%;
+      display:block;
       padding:12px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.14);
@@ -352,6 +434,7 @@
     <div class="container">
       <div class="hero-grid">
 
+        <!-- LEFT -->
         <section class="poster" aria-label="Hero poster">
           <div class="poster-content">
             <div>
@@ -369,6 +452,54 @@
                 <div class="tag">😊 Friendly</div>
                 <div class="tag">🕒 Reliable</div>
               </div>
+
+              <!-- ✅ NEW: fills the big space -->
+              <div class="quote-card">
+                <div class="quote-head">
+                  <h3>Get a Fast Quote</h3>
+                  <span class="quote-badge">Replies fast</span>
+                </div>
+
+                <div class="quote-grid">
+                  <label class="q">
+                    <span>Pickup</span>
+                    <input id="qPickup" class="q-input" placeholder="Airport / Resort / Address" />
+                  </label>
+
+                  <label class="q">
+                    <span>Dropoff</span>
+                    <input id="qDrop" class="q-input" placeholder="Destination" />
+                  </label>
+
+                  <label class="q">
+                    <span>Date</span>
+                    <input id="qDate" type="date" class="q-input" />
+                  </label>
+
+                  <label class="q">
+                    <span>Time</span>
+                    <input id="qTime" type="time" class="q-input" />
+                  </label>
+
+                  <label class="q" style="grid-column: 1 / -1;">
+                    <span>Passengers</span>
+                    <input id="qPax" type="number" min="1" class="q-input" placeholder="1" />
+                  </label>
+
+                  <label class="q" style="grid-column: 1 / -1;">
+                    <span>Notes</span>
+                    <textarea id="qNotes" class="q-input" rows="3" placeholder="Flight info, resort name, stops, tours, etc."></textarea>
+                  </label>
+                </div>
+
+                <div class="quote-actions">
+                  <button class="q-btn" id="qWhatsApp" type="button">Send on WhatsApp</button>
+                  <a class="q-btn ghost" href="#contact">Or use Email Form</a>
+                </div>
+
+                <p class="quote-small">This opens WhatsApp with your details filled in. No Outlook popup.</p>
+              </div>
+              <!-- /NEW -->
             </div>
 
             <div class="cta">
@@ -381,6 +512,7 @@
           </div>
         </section>
 
+        <!-- RIGHT -->
         <aside class="panel" id="contact" aria-label="Contact panel">
           <div class="drive-wrap">
 
@@ -421,12 +553,12 @@
               </div>
             </div>
 
-            <!-- ✅ REAL BOOKING FORM (Netlify Forms) -->
+            <!-- ✅ NETLIFY FORM -->
             <div class="section-card reveal" style="margin-top:auto;">
               <div class="section-inner">
                 <h2>Quick Booking</h2>
                 <p style="margin:10px 0 14px; color: rgba(255,255,255,.72); font-size: 13px; line-height:1.5;">
-                  Sends through the website. You can email notifications to <strong>2005dani@gmail.com</strong>.
+                  Sends through the website. Enable Netlify email notifications to <strong>2005dani@gmail.com</strong>.
                 </p>
 
                 <form name="booking"
@@ -451,8 +583,13 @@
                     Send Booking Request
                   </button>
                 </form>
+
+                <p style="margin:12px 0 0; font-size:12px; color:rgba(255,255,255,.60);">
+                  Netlify: Forms → booking → Notifications → Email → 2005dani@gmail.com
+                </p>
               </div>
             </div>
+            <!-- /NETLIFY FORM -->
 
           </div>
         </aside>
@@ -474,7 +611,7 @@
     </div>
   </footer>
 
-  <!-- ✅ HIDDEN BACKUP FORM (forces Netlify detection) -->
+  <!-- ✅ Hidden backup form: helps Netlify detect the form during deploy -->
   <form name="booking" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
     <input type="hidden" name="form-name" value="booking" />
     <input name="name" />
@@ -486,7 +623,6 @@
   <script>
     const $ = (sel, root=document) => root.querySelector(sel);
     const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
-
     $("#year").textContent = new Date().getFullYear();
 
     // Drive-in animation
@@ -518,7 +654,6 @@
           card.style.opacity = "1";
         }
       }
-
       requestAnimationFrame(animate);
     });
 
@@ -526,8 +661,39 @@
     const io = new IntersectionObserver((entries) => {
       entries.forEach(en => { if (en.isIntersecting) en.target.classList.add("on"); });
     }, { threshold: 0.12 });
-
     $$(".reveal").forEach(el => io.observe(el));
+
+    // ✅ Fast Quote -> WhatsApp (prefilled message)
+    (() => {
+      const btn = document.getElementById("qWhatsApp");
+      if (!btn) return;
+
+      const get = (id) => (document.getElementById(id)?.value || "").trim();
+
+      btn.addEventListener("click", () => {
+        const pickup = get("qPickup");
+        const drop = get("qDrop");
+        const date = get("qDate");
+        const time = get("qTime");
+        const pax = get("qPax");
+        const notes = get("qNotes");
+
+        const lines = [
+          "Hi Grab A Cab Taxi Service, I’d like to book a ride:",
+          pickup ? `• Pickup: ${pickup}` : null,
+          drop ? `• Dropoff: ${drop}` : null,
+          date ? `• Date: ${date}` : null,
+          time ? `• Time: ${time}` : null,
+          pax ? `• Passengers: ${pax}` : null,
+          notes ? `• Notes: ${notes}` : null,
+          "",
+          "Please confirm availability and price. Thanks!"
+        ].filter(Boolean);
+
+        const msg = encodeURIComponent(lines.join("\n"));
+        window.open(`https://wa.me/5016054022?text=${msg}`, "_blank", "noopener");
+      });
+    })();
   </script>
 </body>
 </html>
