@@ -22,7 +22,6 @@
       --muted: rgba(255,255,255,.72);
       --muted2: rgba(255,255,255,.58);
 
-      /* Belize-ish modern accents */
       --green: #007a33;
       --gold: #f6c453;
       --red: #d02b2b;
@@ -30,7 +29,6 @@
       --shadow: 0 18px 55px rgba(0,0,0,.55);
       --shadow2: 0 14px 34px rgba(0,0,0,.45);
       --radius: 22px;
-      --radius2: 16px;
       --max: 1120px;
     }
 
@@ -50,7 +48,7 @@
     a{color:inherit; text-decoration:none}
     .container{max-width:var(--max); margin:0 auto; padding:0 20px}
 
-    /* Top nav */
+    /* Nav */
     .nav{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(12px);
@@ -99,25 +97,19 @@
       background: linear-gradient(135deg, rgba(0,122,51,.95), rgba(246,196,83,.92));
       color: rgba(10,12,16,.95);
       border-color: transparent;
-      font-weight: 700;
+      font-weight: 800;
     }
-    .chip.primary:hover{filter: brightness(1.05)}
 
     /* HERO */
-    .hero{
-      position:relative;
-      padding: 34px 0 26px;
-    }
-
+    .hero{position:relative; padding: 34px 0 26px;}
     .hero-grid{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
       gap: 22px;
       align-items: stretch;
     }
-
     @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr; }
+      .hero-grid{grid-template-columns: 1fr;}
       .brand{min-width:unset}
     }
 
@@ -162,9 +154,7 @@
       gap: 20px;
     }
 
-    .kicker{
-      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
-    }
+    .kicker{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
     .pill{
       font-size:12px;
       padding:6px 10px;
@@ -174,14 +164,8 @@
       color: rgba(255,255,255,.86);
       backdrop-filter: blur(10px);
     }
-    .pill.good{
-      background: rgba(0,122,51,.22);
-      border-color: rgba(0,122,51,.35);
-    }
-    .pill.gold{
-      background: rgba(246,196,83,.18);
-      border-color: rgba(246,196,83,.30);
-    }
+    .pill.good{background: rgba(0,122,51,.22); border-color: rgba(0,122,51,.35);}
+    .pill.gold{background: rgba(246,196,83,.18); border-color: rgba(246,196,83,.30);}
 
     .hero-title{
       margin: 0;
@@ -198,23 +182,20 @@
       text-shadow: 0 10px 24px rgba(0,0,0,.55);
     }
 
-    .tagline{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top: 14px;
-    }
+    .tagline{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px;}
     .tag{
       padding: 10px 12px;
       border-radius: 999px;
       background: rgba(0,0,0,.42);
       border: 1px solid rgba(255,255,255,.12);
       backdrop-filter: blur(12px);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 13px;
       color: rgba(255,255,255,.92);
       display:flex; align-items:center; gap:8px;
     }
 
-    /* DRIVE-IN CARD */
+    /* RIGHT PANEL */
     .panel{
       position:relative;
       border-radius: var(--radius);
@@ -224,7 +205,6 @@
       overflow:hidden;
       min-height: 520px;
     }
-
     .panel::before{
       content:"";
       position:absolute; inset:0;
@@ -261,7 +241,6 @@
         rgba(0,0,0,0) 14px 34px
       );
       opacity:.55;
-      transform: rotate(0deg);
       pointer-events:none;
     }
 
@@ -275,8 +254,6 @@
       display:flex;
       flex-direction:column;
       gap: 12px;
-
-      /* start offscreen for “drive-in” */
       transform: translateX(-120%);
       opacity: 0;
     }
@@ -284,22 +261,12 @@
     .drive-header{
       display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
     }
-
-    .drive-header h2{
-      margin:0;
-      font-size: 18px;
-      letter-spacing: .2px;
-    }
-    .drive-header p{
-      margin: 6px 0 0;
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.35;
-    }
+    .drive-header h2{margin:0; font-size: 18px;}
+    .drive-header p{margin: 6px 0 0; font-size: 13px; color: var(--muted); line-height: 1.35;}
 
     .badge{
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 900;
       padding: 8px 10px;
       border-radius: 999px;
       background: linear-gradient(135deg, rgba(246,196,83,.95), rgba(0,122,51,.92));
@@ -317,7 +284,6 @@
       .actions{grid-template-columns: 1fr;}
       .poster-content{padding: 20px;}
       .poster{min-height: 560px;}
-      .panel{min-height: unset;}
     }
 
     .btn{
@@ -327,7 +293,7 @@
       border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.06);
       color: rgba(255,255,255,.90);
-      font-weight: 800;
+      font-weight: 900;
       font-size: 14px;
       transition: transform .18s ease, background .18s ease, border-color .18s ease;
       user-select:none;
@@ -342,18 +308,9 @@
       border-color: rgba(246,196,83,.35);
       color: rgba(10,12,16,.95);
     }
-    .btn.mail{
-      grid-column: 1 / -1;
-      background: rgba(0,0,0,.22);
-    }
+    .btn.mail{grid-column: 1 / -1; background: rgba(0,0,0,.22);}
 
-    .info{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 4px;
-    }
-
+    .info{display:grid; grid-template-columns: 1fr; gap: 10px; margin-top: 4px;}
     .line{
       display:flex; gap:10px; align-items:flex-start;
       padding: 12px;
@@ -384,16 +341,8 @@
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.18);
     }
-    .services h3{
-      margin:0 0 10px; font-size: 14px; letter-spacing:.2px;
-      color: rgba(255,255,255,.92);
-    }
-    .bullets{
-      margin:0; padding-left: 18px;
-      color: rgba(255,255,255,.85);
-      font-size: 13px;
-      line-height:1.55;
-    }
+    .services h3{margin:0 0 10px; font-size: 14px;}
+    .bullets{margin:0; padding-left: 18px; color: rgba(255,255,255,.85); font-size: 13px; line-height:1.55;}
     .bullets li{margin: 8px 0}
     .bullets li::marker{color: rgba(246,196,83,.92)}
 
@@ -408,10 +357,8 @@
     .cta strong{font-size: 14px}
     .cta span{display:block; font-size: 12.5px; color: var(--muted); margin-top: 2px}
 
-    /* Sections below hero */
-    .section{
-      padding: 30px 0;
-    }
+    /* Sections */
+    .section{padding: 30px 0;}
     .section-card{
       border-radius: var(--radius);
       border: 1px solid rgba(255,255,255,.10);
@@ -420,11 +367,7 @@
       overflow:hidden;
     }
     .section-inner{padding: 22px}
-    .section h2{
-      margin:0;
-      font-size: 18px;
-      letter-spacing: .2px;
-    }
+    .section h2{margin:0; font-size: 18px;}
     .grid3{
       margin-top: 14px;
       display:grid;
@@ -443,37 +386,16 @@
     .mini h3{margin:0; font-size: 14px}
     .mini p{margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height:1.45}
 
-    footer{
-      padding: 22px 0 34px;
-      color: rgba(255,255,255,.60);
-      font-size: 12.5px;
-    }
+    footer{padding: 22px 0 34px; color: rgba(255,255,255,.60); font-size: 12.5px;}
     .foot{
       display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
       border-top:1px solid rgba(255,255,255,.10);
       padding-top: 16px;
     }
 
-    /* little car svg animation helper */
-    .taxi{
-      width: 44px; height: 44px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.22);
-      display:grid; place-items:center;
-      flex: 0 0 auto;
-    }
-
-    /* subtle reveal animations */
-    .reveal{
-      opacity:0;
-      transform: translateY(16px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-    .reveal.on{
-      opacity:1;
-      transform: translateY(0);
-    }
+    /* Reveal */
+    .reveal{opacity:0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease;}
+    .reveal.on{opacity:1; transform: translateY(0);}
 
     @media (prefers-reduced-motion: reduce){
       .drive-card{transform:none !important; opacity:1 !important}
@@ -490,7 +412,6 @@
       <div class="nav-inner">
         <a class="brand" href="#top" aria-label="Grab A Cab Taxi Service Home">
           <div class="logo" aria-hidden="true">
-            <!-- small taxi icon -->
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
               <path d="M3 14.5V11.8c0-.6.2-1.1.6-1.6l2.6-3.4c.4-.5 1-.8 1.7-.8h8.2c.7 0 1.3.3 1.7.8l2.6 3.4c.4.5.6 1 .6 1.6v2.7" stroke="rgba(10,12,16,.95)" stroke-width="2" stroke-linecap="round"/>
               <path d="M6 14.5h12" stroke="rgba(10,12,16,.95)" stroke-width="2" stroke-linecap="round"/>
@@ -519,7 +440,8 @@
     <div class="hero-backdrop"></div>
     <div class="container">
       <div class="hero-grid">
-        <!-- Left: Flyer hero -->
+
+        <!-- Left -->
         <section class="poster" aria-label="Hero poster">
           <div class="poster-content">
             <div>
@@ -533,15 +455,9 @@
               <p class="hero-sub"><strong>Grab A Cab Taxi Service</strong> — Safe, Friendly & Reliable</p>
 
               <div class="tagline">
-                <div class="tag">
-                  <span aria-hidden="true">✅</span> Safe
-                </div>
-                <div class="tag">
-                  <span aria-hidden="true">😊</span> Friendly
-                </div>
-                <div class="tag">
-                  <span aria-hidden="true">🕒</span> Reliable
-                </div>
+                <div class="tag"><span aria-hidden="true">✅</span> Safe</div>
+                <div class="tag"><span aria-hidden="true">😊</span> Friendly</div>
+                <div class="tag"><span aria-hidden="true">🕒</span> Reliable</div>
               </div>
             </div>
 
@@ -555,57 +471,26 @@
           </div>
         </section>
 
-        <!-- Right: Drive-in card panel -->
+        <!-- Right -->
         <aside class="panel" id="contact" aria-label="Contact panel">
           <div class="drive-wrap">
+
             <div class="drive-lane">
               <div class="lane-stripes" aria-hidden="true"></div>
 
               <div class="drive-card" id="driveCard">
                 <div class="drive-header">
-                  <div style="display:flex; gap:12px; align-items:flex-start;">
-                    <div class="taxi" aria-hidden="true">
-                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                        <path d="M3 14.5V11.8c0-.6.2-1.1.6-1.6l2.6-3.4c.4-.5 1-.8 1.7-.8h8.2c.7 0 1.3.3 1.7.8l2.6 3.4c.4.5.6 1 .6 1.6v2.7" stroke="rgba(255,255,255,.92)" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M6 14.5h12" stroke="rgba(255,255,255,.92)" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M7.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="rgba(246,196,83,.95)"/>
-                        <path d="M16.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="rgba(246,196,83,.95)"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <h2>Contact & Book Now</h2>
-                      <p>Direct from the flyer — tap to call / WhatsApp, or copy numbers instantly.</p>
-                    </div>
+                  <div>
+                    <h2>Contact & Book Now</h2>
+                    <p>Tap to call / WhatsApp, or submit the booking form below (no Outlook popup).</p>
                   </div>
                   <div class="badge">24/7 Friendly Service</div>
                 </div>
 
                 <div class="actions">
-                  <a class="btn call" href="tel:+5016042698" aria-label="Call +501 6042698">
-                    <!-- phone icon -->
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M6.5 3.5h2.2c.7 0 1.3.5 1.4 1.2l.5 2.6c.1.6-.2 1.2-.7 1.5l-1.4.9c1.1 2.2 2.9 4 5.1 5.1l.9-1.4c.3-.5.9-.8 1.5-.7l2.6.5c.7.1 1.2.7 1.2 1.4v2.2c0 .8-.6 1.5-1.4 1.5C11 21.3 2.7 13 5 4.9c.1-.8.8-1.4 1.5-1.4Z" stroke="rgba(255,255,255,.92)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Call 6042698
-                  </a>
-
-                  <a class="btn whatsapp" href="https://wa.me/5016054022" target="_blank" rel="noopener" aria-label="WhatsApp +501 6054022">
-                    <!-- whatsapp-like bubble -->
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M20 11.5c0 4.4-3.6 8-8 8-1.3 0-2.6-.3-3.7-.9L4 20l1.4-4.1c-.6-1.1-.9-2.3-.9-3.6 0-4.4 3.6-8 8-8s8 3.6 8 8Z" stroke="rgba(10,12,16,.95)" stroke-width="2" stroke-linejoin="round"/>
-                      <path d="M9.3 9.1c.3-.3.7-.3 1 0l.7.7c.3.3.3.8 0 1.1l-.2.2c.7 1.2 1.7 2.2 2.9 2.9l.2-.2c.3-.3.8-.3 1.1 0l.7.7c.3.3.3.7 0 1-1 1-3.9.1-6.3-2.3S8.3 10.1 9.3 9.1Z" fill="rgba(10,12,16,.95)"/>
-                    </svg>
-                    WhatsApp 6054022
-                  </a>
-
-                  <a class="btn mail" href="mailto:grabacab.belize@gmail.com" aria-label="Email grabacab.belize@gmail.com">
-                    <!-- mail icon -->
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M4 6h16v12H4V6Z" stroke="rgba(255,255,255,.92)" stroke-width="2" />
-                      <path d="m4 7 8 6 8-6" stroke="rgba(255,255,255,.92)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    grabacab.belize@gmail.com
-                  </a>
+                  <a class="btn call" href="tel:+5016042698" aria-label="Call +501 6042698">Call 6042698</a>
+                  <a class="btn whatsapp" href="https://wa.me/5016054022" target="_blank" rel="noopener" aria-label="WhatsApp +501 6054022">WhatsApp 6054022</a>
+                  <a class="btn mail" href="mailto:2005dani@gmail.com" aria-label="Email 2005dani@gmail.com">2005dani@gmail.com</a>
                 </div>
 
                 <div class="info">
@@ -647,23 +532,54 @@
               </div>
             </div>
 
+            <!-- ✅ NETLIFY FORM (this is what makes it email you without Outlook) -->
             <div class="section-card reveal" style="margin-top:auto;">
               <div class="section-inner">
                 <h2>Quick Booking</h2>
-                <p style="margin:10px 0 0; color: rgba(255,255,255,.72); font-size: 13px; line-height:1.5;">
-                  Tell us: <strong>pickup location</strong>, <strong>time</strong>, and <strong>number of passengers</strong>.
-                  For tours, mention <strong>Secret Beach</strong> or your preferred stops.
+                <p style="margin:10px 0 14px; color: rgba(255,255,255,.72); font-size: 13px; line-height:1.5;">
+                  Submits through the website (Netlify Forms) and can email you at <strong>2005dani@gmail.com</strong>.
                 </p>
-                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-                  <a class="chip" href="https://wa.me/5016054022" target="_blank" rel="noopener">Message on WhatsApp</a>
-                  <a class="chip" href="mailto:grabacab.belize@gmail.com">Email</a>
-                  <a class="chip" href="tel:+5016042698">Call</a>
-                </div>
+
+                <form name="booking"
+                      method="POST"
+                      netlify
+                      netlify-honeypot="bot-field"
+                      action="/thank-you.html"
+                      style="display:grid; gap:10px;">
+
+                  <input type="hidden" name="form-name" value="booking" />
+
+                  <p style="display:none;">
+                    <label>Don’t fill this out: <input name="bot-field" /></label>
+                  </p>
+
+                  <input name="name" required placeholder="Name"
+                         style="padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); color:rgba(255,255,255,.92);" />
+
+                  <input name="phone" required placeholder="Phone / WhatsApp"
+                         style="padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); color:rgba(255,255,255,.92);" />
+
+                  <input name="pickup" required placeholder="Pickup location (airport / resort / address)"
+                         style="padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); color:rgba(255,255,255,.92);" />
+
+                  <textarea name="notes" rows="4" placeholder="Date/time, passengers, flight info, tours, etc."
+                            style="padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); color:rgba(255,255,255,.92); resize:vertical;"></textarea>
+
+                  <button class="btn call" type="submit" style="width:100%; justify-content:center;">
+                    Send Booking Request
+                  </button>
+                </form>
+
+                <p style="margin:12px 0 0; font-size:12px; color:rgba(255,255,255,.60);">
+                  After deploy, enable email notifications in Netlify → Forms → booking → Notifications.
+                </p>
               </div>
             </div>
+            <!-- /NETLIFY FORM -->
 
           </div>
         </aside>
+
       </div>
     </div>
   </main>
@@ -679,21 +595,21 @@
               <div aria-hidden="true">🛬</div>
               <div>
                 <h3>Ports of Entry Pickups</h3>
-                <p>Airport / port pickups and resort departures handled smoothly — just share your arrival details.</p>
+                <p>Airport / port pickups and resort departures handled smoothly — share arrival details.</p>
               </div>
             </div>
             <div class="mini">
               <div aria-hidden="true">🏝️</div>
               <div>
                 <h3>Secret Beach & Tours</h3>
-                <p>Plan an easy day out with stops, photos, and flexible timing (great for families and friends).</p>
+                <p>Easy day trips with flexible stops for photos, food, and fun.</p>
               </div>
             </div>
             <div class="mini">
               <div aria-hidden="true">👥</div>
               <div>
                 <h3>Big Groups Welcome</h3>
-                <p>We cater for groups — coordinate multiple pickups and keep everyone together and on time.</p>
+                <p>We coordinate group pickups and keep everyone together and on time.</p>
               </div>
             </div>
           </div>
@@ -717,11 +633,9 @@
   <footer>
     <div class="container">
       <div class="foot">
-        <div>
-          © <span id="year"></span> Grab A Cab Taxi Service • Belize
-        </div>
+        <div>© <span id="year"></span> Grab A Cab Taxi Service • Belize</div>
         <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;">
-          <a class="chip" href="mailto:grabacab.belize@gmail.com">grabacab.belize@gmail.com</a>
+          <a class="chip" href="mailto:2005dani@gmail.com">2005dani@gmail.com</a>
           <a class="chip" href="tel:+5016042698">+501 6042698</a>
           <a class="chip" href="tel:+5016054022">+501 6054022</a>
         </div>
@@ -730,14 +644,12 @@
   </footer>
 
   <script>
-    // ====== Helpers
     const $ = (sel, root=document) => root.querySelector(sel);
     const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
 
-    // ====== Year
     $("#year").textContent = new Date().getFullYear();
 
-    // ====== Smooth anchor scroll (simple + modern)
+    // Smooth anchor scroll
     document.addEventListener("click", (e) => {
       const a = e.target.closest('a[href^="#"]');
       if (!a) return;
@@ -749,7 +661,7 @@
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
-    // ====== Copy buttons
+    // Copy buttons
     $$(".copy").forEach(btn => {
       btn.addEventListener("click", async () => {
         const text = btn.getAttribute("data-copy") || "";
@@ -765,24 +677,20 @@
             btn.style.borderColor = "";
           }, 1100);
         }catch(err){
-          // fallback
           prompt("Copy this:", text);
         }
       });
     });
 
-    // ====== Drive-in animation on load (your request)
-    // Card "drives" in from left with a little bounce.
+    // Drive-in animation on load
     window.addEventListener("DOMContentLoaded", () => {
       const card = $("#driveCard");
       if (!card) return;
 
-      // Staged animation using requestAnimationFrame for smoothness
       let start = null;
       const duration = 950;
 
       function easeOutBack(t){
-        // classic easeOutBack
         const c1 = 1.70158;
         const c3 = c1 + 1;
         return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
@@ -793,7 +701,6 @@
         const p = Math.min((ts - start) / duration, 1);
         const eased = easeOutBack(p);
 
-        // from -120% to 0%
         const x = (-120 + 120 * eased);
         card.style.transform = `translateX(${x}%)`;
         card.style.opacity = String(Math.min(1, p * 1.2));
@@ -808,11 +715,9 @@
       requestAnimationFrame(animate);
     });
 
-    // ====== Reveal-on-scroll for the lower sections
+    // Reveal-on-scroll
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(en => {
-        if (en.isIntersecting) en.target.classList.add("on");
-      });
+      entries.forEach(en => { if (en.isIntersecting) en.target.classList.add("on"); });
     }, { threshold: 0.12 });
 
     $$(".reveal").forEach(el => io.observe(el));
