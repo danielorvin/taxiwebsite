@@ -6,7 +6,6 @@
   <title>Grab A Cab Taxi Service — Belize</title>
   <meta name="description" content="Grab A Cab Taxi Service — Safe, Friendly & Reliable. Airport/port pickups, resort departures, dinner shuttle, Secret Beach tours, and big groups. Call or WhatsApp today." />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Grab A Cab Taxi Service — Belize" />
   <meta property="og:description" content="Safe, Friendly & Reliable. Call or WhatsApp +501 6042698 / +501 6054022." />
   <meta property="og:type" content="website" />
@@ -15,9 +14,6 @@
   <style>
     :root{
       --bg: #07090c;
-      --card: rgba(18, 21, 28, .72);
-      --card2: rgba(18, 21, 28, .55);
-      --stroke: rgba(255,255,255,.10);
       --text: rgba(255,255,255,.92);
       --muted: rgba(255,255,255,.72);
       --muted2: rgba(255,255,255,.58);
@@ -36,7 +32,7 @@
     html, body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--text);
       background: radial-gradient(1000px 700px at 10% 10%, rgba(0,122,51,.22), transparent 60%),
                   radial-gradient(900px 650px at 90% 10%, rgba(246,196,83,.18), transparent 60%),
@@ -60,10 +56,7 @@
       padding:12px 0;
       gap:14px;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width: 220px;
-    }
+    .brand{display:flex; align-items:center; gap:12px; min-width: 220px;}
     .logo{
       width:42px; height:42px; border-radius: 14px;
       display:grid; place-items:center;
@@ -73,15 +66,10 @@
       border:1px solid rgba(255,255,255,.12);
       box-shadow: 0 10px 24px rgba(0,0,0,.35);
     }
-    .brand h1{
-      font-size:14px; margin:0; line-height:1.1;
-      letter-spacing:.3px;
-    }
+    .brand h1{font-size:14px; margin:0; line-height:1.1; letter-spacing:.3px;}
     .brand p{margin:2px 0 0; font-size:12px; color:var(--muted2)}
-    .nav-links{
-      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
-      justify-content:flex-end;
-    }
+    .nav-links{display:flex; gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
+
     .chip{
       font-size:12px;
       padding:8px 12px;
@@ -97,10 +85,10 @@
       background: linear-gradient(135deg, rgba(0,122,51,.95), rgba(246,196,83,.92));
       color: rgba(10,12,16,.95);
       border-color: transparent;
-      font-weight: 800;
+      font-weight: 900;
     }
 
-    /* HERO */
+    /* Hero */
     .hero{position:relative; padding: 34px 0 26px;}
     .hero-grid{
       display:grid;
@@ -108,10 +96,7 @@
       gap: 22px;
       align-items: stretch;
     }
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr;}
-      .brand{min-width:unset}
-    }
+    @media (max-width: 980px){ .hero-grid{grid-template-columns: 1fr;} .brand{min-width:unset} }
 
     .hero-backdrop{
       position:absolute; inset:0;
@@ -144,7 +129,6 @@
       opacity:.7;
       pointer-events:none;
     }
-
     .poster-content{
       position:absolute; inset:0;
       padding: 28px;
@@ -181,7 +165,6 @@
       color: rgba(255,255,255,.90);
       text-shadow: 0 10px 24px rgba(0,0,0,.55);
     }
-
     .tagline{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px;}
     .tag{
       padding: 10px 12px;
@@ -189,13 +172,13 @@
       background: rgba(0,0,0,.42);
       border: 1px solid rgba(255,255,255,.12);
       backdrop-filter: blur(12px);
-      font-weight: 800;
+      font-weight: 900;
       font-size: 13px;
       color: rgba(255,255,255,.92);
       display:flex; align-items:center; gap:8px;
     }
 
-    /* RIGHT PANEL */
+    /* Right panel */
     .panel{
       position:relative;
       border-radius: var(--radius);
@@ -215,15 +198,7 @@
       pointer-events:none;
     }
 
-    .drive-wrap{
-      position:relative;
-      height:100%;
-      padding: 18px;
-      display:flex;
-      flex-direction:column;
-      gap: 14px;
-    }
-
+    .drive-wrap{position:relative; height:100%; padding: 18px; display:flex; flex-direction:column; gap: 14px;}
     .drive-lane{
       position:relative;
       border-radius: 18px;
@@ -232,14 +207,9 @@
       overflow:hidden;
       padding: 14px;
     }
-
     .lane-stripes{
       position:absolute; inset:-30px;
-      background: repeating-linear-gradient(
-        135deg,
-        rgba(246,196,83,.18) 0 14px,
-        rgba(0,0,0,0) 14px 34px
-      );
+      background: repeating-linear-gradient(135deg, rgba(246,196,83,.18) 0 14px, rgba(0,0,0,0) 14px 34px);
       opacity:.55;
       pointer-events:none;
     }
@@ -258,9 +228,7 @@
       opacity: 0;
     }
 
-    .drive-header{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
-    }
+    .drive-header{display:flex; align-items:flex-start; justify-content:space-between; gap:12px;}
     .drive-header h2{margin:0; font-size: 18px;}
     .drive-header p{margin: 6px 0 0; font-size: 13px; color: var(--muted); line-height: 1.35;}
 
@@ -275,11 +243,7 @@
       box-shadow: 0 10px 20px rgba(0,0,0,.25);
     }
 
-    .actions{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
+    .actions{display:grid; grid-template-columns: 1fr 1fr; gap: 10px;}
     @media (max-width: 520px){
       .actions{grid-template-columns: 1fr;}
       .poster-content{padding: 20px;}
@@ -299,40 +263,9 @@
       user-select:none;
     }
     .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.18)}
-    .btn.call{
-      background: linear-gradient(135deg, rgba(0,122,51,.92), rgba(0,122,51,.72));
-      border-color: rgba(0,122,51,.35);
-    }
-    .btn.whatsapp{
-      background: linear-gradient(135deg, rgba(246,196,83,.92), rgba(246,196,83,.62));
-      border-color: rgba(246,196,83,.35);
-      color: rgba(10,12,16,.95);
-    }
+    .btn.call{background: linear-gradient(135deg, rgba(0,122,51,.92), rgba(0,122,51,.72)); border-color: rgba(0,122,51,.35);}
+    .btn.whatsapp{background: linear-gradient(135deg, rgba(246,196,83,.92), rgba(246,196,83,.62)); border-color: rgba(246,196,83,.35); color: rgba(10,12,16,.95);}
     .btn.mail{grid-column: 1 / -1; background: rgba(0,0,0,.22);}
-
-    .info{display:grid; grid-template-columns: 1fr; gap: 10px; margin-top: 4px;}
-    .line{
-      display:flex; gap:10px; align-items:flex-start;
-      padding: 12px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
-    }
-    .line strong{display:block; font-size: 14px}
-    .line span{display:block; font-size: 12.5px; color: var(--muted); margin-top: 2px; line-height:1.35}
-    .copy{
-      margin-left:auto;
-      font-size:12px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.20);
-      color: rgba(255,255,255,.85);
-      cursor:pointer;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
-      user-select:none;
-    }
-    .copy:hover{transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18)}
 
     .services{
       margin-top: 10px;
@@ -357,8 +290,6 @@
     .cta strong{font-size: 14px}
     .cta span{display:block; font-size: 12.5px; color: var(--muted); margin-top: 2px}
 
-    /* Sections */
-    .section{padding: 30px 0;}
     .section-card{
       border-radius: var(--radius);
       border: 1px solid rgba(255,255,255,.10);
@@ -367,25 +298,6 @@
       overflow:hidden;
     }
     .section-inner{padding: 22px}
-    .section h2{margin:0; font-size: 18px;}
-    .grid3{
-      margin-top: 14px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    @media (max-width: 900px){ .grid3{grid-template-columns: 1fr;} }
-
-    .mini{
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.18);
-      padding: 14px;
-      display:flex; gap:12px; align-items:flex-start;
-    }
-    .mini h3{margin:0; font-size: 14px}
-    .mini p{margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height:1.45}
-
     footer{padding: 22px 0 34px; color: rgba(255,255,255,.60); font-size: 12.5px;}
     .foot{
       display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
@@ -393,9 +305,19 @@
       padding-top: 16px;
     }
 
-    /* Reveal */
     .reveal{opacity:0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease;}
     .reveal.on{opacity:1; transform: translateY(0);}
+
+    /* Input styling */
+    .field{
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.25);
+      color:rgba(255,255,255,.92);
+      outline:none;
+    }
+    .field::placeholder{color: rgba(255,255,255,.55);}
 
     @media (prefers-reduced-motion: reduce){
       .drive-card{transform:none !important; opacity:1 !important}
@@ -406,28 +328,18 @@
 </head>
 
 <body>
-  <!-- NAV -->
   <header class="nav">
     <div class="container">
       <div class="nav-inner">
-        <a class="brand" href="#top" aria-label="Grab A Cab Taxi Service Home">
-          <div class="logo" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M3 14.5V11.8c0-.6.2-1.1.6-1.6l2.6-3.4c.4-.5 1-.8 1.7-.8h8.2c.7 0 1.3.3 1.7.8l2.6 3.4c.4.5.6 1 .6 1.6v2.7" stroke="rgba(10,12,16,.95)" stroke-width="2" stroke-linecap="round"/>
-              <path d="M6 14.5h12" stroke="rgba(10,12,16,.95)" stroke-width="2" stroke-linecap="round"/>
-              <path d="M7.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="rgba(10,12,16,.95)"/>
-              <path d="M16.5 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" fill="rgba(10,12,16,.95)"/>
-            </svg>
-          </div>
+        <a class="brand" href="#top" aria-label="Home">
+          <div class="logo" aria-hidden="true"></div>
           <div>
             <h1>Grab A Cab Taxi Service</h1>
             <p>Belize • Safe, Friendly & Reliable</p>
           </div>
         </a>
-
         <nav class="nav-links" aria-label="Primary">
           <a class="chip" href="#services">Services</a>
-          <a class="chip" href="#why">Why Us</a>
           <a class="chip" href="#contact">Contact</a>
           <a class="chip primary" href="#contact">Call / WhatsApp</a>
         </nav>
@@ -435,13 +347,11 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main id="top" class="hero">
     <div class="hero-backdrop"></div>
     <div class="container">
       <div class="hero-grid">
 
-        <!-- Left -->
         <section class="poster" aria-label="Hero poster">
           <div class="poster-content">
             <div>
@@ -455,9 +365,9 @@
               <p class="hero-sub"><strong>Grab A Cab Taxi Service</strong> — Safe, Friendly & Reliable</p>
 
               <div class="tagline">
-                <div class="tag"><span aria-hidden="true">✅</span> Safe</div>
-                <div class="tag"><span aria-hidden="true">😊</span> Friendly</div>
-                <div class="tag"><span aria-hidden="true">🕒</span> Reliable</div>
+                <div class="tag">✅ Safe</div>
+                <div class="tag">😊 Friendly</div>
+                <div class="tag">🕒 Reliable</div>
               </div>
             </div>
 
@@ -471,7 +381,6 @@
           </div>
         </section>
 
-        <!-- Right -->
         <aside class="panel" id="contact" aria-label="Contact panel">
           <div class="drive-wrap">
 
@@ -482,35 +391,15 @@
                 <div class="drive-header">
                   <div>
                     <h2>Contact & Book Now</h2>
-                    <p>Tap to call / WhatsApp, or submit the booking form below (no Outlook popup).</p>
+                    <p>Call / WhatsApp or submit the booking form (no Outlook popup).</p>
                   </div>
                   <div class="badge">24/7 Friendly Service</div>
                 </div>
 
                 <div class="actions">
-                  <a class="btn call" href="tel:+5016042698" aria-label="Call +501 6042698">Call 6042698</a>
-                  <a class="btn whatsapp" href="https://wa.me/5016054022" target="_blank" rel="noopener" aria-label="WhatsApp +501 6054022">WhatsApp 6054022</a>
-                  <a class="btn mail" href="mailto:2005dani@gmail.com" aria-label="Email 2005dani@gmail.com">2005dani@gmail.com</a>
-                </div>
-
-                <div class="info">
-                  <div class="line">
-                    <div aria-hidden="true">📞</div>
-                    <div>
-                      <strong>+501 6042698</strong>
-                      <span>Tap to call: works on mobile and most desktops with calling apps.</span>
-                    </div>
-                    <button class="copy" data-copy="+501 6042698" type="button">Copy</button>
-                  </div>
-
-                  <div class="line">
-                    <div aria-hidden="true">💬</div>
-                    <div>
-                      <strong>+501 6054022</strong>
-                      <span>Tap WhatsApp above — or copy to message later.</span>
-                    </div>
-                    <button class="copy" data-copy="+501 6054022" type="button">Copy</button>
-                  </div>
+                  <a class="btn call" href="tel:+5016042698">Call 6042698</a>
+                  <a class="btn whatsapp" href="https://wa.me/5016054022" target="_blank" rel="noopener">WhatsApp 6054022</a>
+                  <a class="btn mail" href="mailto:2005dani@gmail.com">2005dani@gmail.com</a>
                 </div>
 
                 <div class="services" id="services">
@@ -532,18 +421,18 @@
               </div>
             </div>
 
-            <!-- ✅ NETLIFY FORM (this is what makes it email you without Outlook) -->
+            <!-- ✅ REAL BOOKING FORM (Netlify Forms) -->
             <div class="section-card reveal" style="margin-top:auto;">
               <div class="section-inner">
                 <h2>Quick Booking</h2>
                 <p style="margin:10px 0 14px; color: rgba(255,255,255,.72); font-size: 13px; line-height:1.5;">
-                  Submits through the website (Netlify Forms) and can email you at <strong>2005dani@gmail.com</strong>.
+                  Sends through the website. You can email notifications to <strong>2005dani@gmail.com</strong>.
                 </p>
 
                 <form name="booking"
                       method="POST"
-                      netlify
-                      netlify-honeypot="bot-field"
+                      data-netlify="true"
+                      data-netlify-honeypot="bot-field"
                       action="/thank-you.html"
                       style="display:grid; gap:10px;">
 
@@ -553,29 +442,17 @@
                     <label>Don’t fill this out: <input name="bot-field" /></label>
                   </p>
 
-                  <input name="name" required placeholder="Name"
-                         style="padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); color:rgba(255,255,255,.92);" />
-
-                  <input name="phone" required placeholder="Phone / WhatsApp"
-                         style="padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); color:rgba(255,255,255,.92);" />
-
-                  <input name="pickup" required placeholder="Pickup location (airport / resort / address)"
-                         style="padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); color:rgba(255,255,255,.92);" />
-
-                  <textarea name="notes" rows="4" placeholder="Date/time, passengers, flight info, tours, etc."
-                            style="padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); color:rgba(255,255,255,.92); resize:vertical;"></textarea>
+                  <input class="field" name="name" required placeholder="Name" />
+                  <input class="field" name="phone" required placeholder="Phone / WhatsApp" />
+                  <input class="field" name="pickup" required placeholder="Pickup location (airport / resort / address)" />
+                  <textarea class="field" name="notes" rows="4" placeholder="Date/time, passengers, flight info, tours, etc."></textarea>
 
                   <button class="btn call" type="submit" style="width:100%; justify-content:center;">
                     Send Booking Request
                   </button>
                 </form>
-
-                <p style="margin:12px 0 0; font-size:12px; color:rgba(255,255,255,.60);">
-                  After deploy, enable email notifications in Netlify → Forms → booking → Notifications.
-                </p>
               </div>
             </div>
-            <!-- /NETLIFY FORM -->
 
           </div>
         </aside>
@@ -583,52 +460,6 @@
       </div>
     </div>
   </main>
-
-  <!-- WHY -->
-  <section id="why" class="section">
-    <div class="container">
-      <div class="section-card reveal">
-        <div class="section-inner">
-          <h2>Why ride with Grab A Cab</h2>
-          <div class="grid3">
-            <div class="mini">
-              <div aria-hidden="true">🛬</div>
-              <div>
-                <h3>Ports of Entry Pickups</h3>
-                <p>Airport / port pickups and resort departures handled smoothly — share arrival details.</p>
-              </div>
-            </div>
-            <div class="mini">
-              <div aria-hidden="true">🏝️</div>
-              <div>
-                <h3>Secret Beach & Tours</h3>
-                <p>Easy day trips with flexible stops for photos, food, and fun.</p>
-              </div>
-            </div>
-            <div class="mini">
-              <div aria-hidden="true">👥</div>
-              <div>
-                <h3>Big Groups Welcome</h3>
-                <p>We coordinate group pickups and keep everyone together and on time.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="cta" style="margin-top:16px;">
-            <div>
-              <strong>READY TO ROLL?</strong>
-              <span>Call or message us today.</span>
-            </div>
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="chip primary" href="tel:+5016042698">Call 6042698</a>
-              <a class="chip" href="https://wa.me/5016054022" target="_blank" rel="noopener">WhatsApp 6054022</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <div class="container">
@@ -643,46 +474,22 @@
     </div>
   </footer>
 
+  <!-- ✅ HIDDEN BACKUP FORM (forces Netlify detection) -->
+  <form name="booking" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="booking" />
+    <input name="name" />
+    <input name="phone" />
+    <input name="pickup" />
+    <textarea name="notes"></textarea>
+  </form>
+
   <script>
     const $ = (sel, root=document) => root.querySelector(sel);
     const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
 
     $("#year").textContent = new Date().getFullYear();
 
-    // Smooth anchor scroll
-    document.addEventListener("click", (e) => {
-      const a = e.target.closest('a[href^="#"]');
-      if (!a) return;
-      const id = a.getAttribute("href");
-      if (!id || id === "#") return;
-      const el = document.querySelector(id);
-      if (!el) return;
-      e.preventDefault();
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-
-    // Copy buttons
-    $$(".copy").forEach(btn => {
-      btn.addEventListener("click", async () => {
-        const text = btn.getAttribute("data-copy") || "";
-        try{
-          await navigator.clipboard.writeText(text);
-          const old = btn.textContent;
-          btn.textContent = "Copied!";
-          btn.style.background = "rgba(0,122,51,.22)";
-          btn.style.borderColor = "rgba(0,122,51,.35)";
-          setTimeout(() => {
-            btn.textContent = old;
-            btn.style.background = "";
-            btn.style.borderColor = "";
-          }, 1100);
-        }catch(err){
-          prompt("Copy this:", text);
-        }
-      });
-    });
-
-    // Drive-in animation on load
+    // Drive-in animation
     window.addEventListener("DOMContentLoaded", () => {
       const card = $("#driveCard");
       if (!card) return;
